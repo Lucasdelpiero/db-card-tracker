@@ -1,35 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0cs2mr7fgvhp"]
+[gd_scene load_steps=9 format=3 uid="uid://d0cs2mr7fgvhp"]
 
 [ext_resource type="Script" uid="uid://bi1ngbpfcupm5" path="res://scenes/box_button.gd" id="1_267f2"]
 [ext_resource type="Texture2D" uid="uid://2r2xbs737wlt" path="res://data/icons/Caja.jpg" id="1_u2om5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1670a"]
-size = Vector2(260, 40)
+[sub_resource type="Gradient" id="Gradient_267f2"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.314286, 1)
+colors = PackedColorArray(0, 0.5945, 0.87, 1, 0, 0.596078, 0.870588, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jjtbc"]
+gradient = SubResource("Gradient_267f2")
+width = 400
+height = 120
+
+[sub_resource type="Gradient" id="Gradient_jjtbc"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.314286, 1)
+colors = PackedColorArray(0, 0.5945, 0.87, 1, 0, 0.596078, 0.870588, 1, 0.6, 0.6, 0.6, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p0bgr"]
+gradient = SubResource("Gradient_jjtbc")
+width = 400
+height = 120
+
+[sub_resource type="Gradient" id="Gradient_ib51l"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.314286, 1)
+colors = PackedColorArray(0, 0.5945, 0.87, 1, 0, 0.596078, 0.870588, 1, 0.6, 0.6, 0.6, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5rs0a"]
+gradient = SubResource("Gradient_ib51l")
+width = 400
+height = 120
 
 [node name="BoxButton" type="MarginContainer"]
+custom_minimum_size = Vector2(0, 120)
+offset_right = 259.0
+offset_bottom = 41.0
+size_flags_vertical = 3
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_bottom = 10
 script = ExtResource("1_267f2")
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = SubResource("GradientTexture2D_jjtbc")
+texture_pressed = SubResource("GradientTexture2D_p0bgr")
+texture_hover = SubResource("GradientTexture2D_5rs0a")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_u2om5")
 expand_mode = 3
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-mouse_filter = 1
 text = " LEYENDA 1"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-unique_name_in_owner = true
-position = Vector2(130, 21)
-shape = SubResource("RectangleShape2D_1670a")
-passby_press = true
-
-[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
-[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

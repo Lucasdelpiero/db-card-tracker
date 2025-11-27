@@ -23,12 +23,14 @@ layout_mode = 0
 offset_right = 392.0
 offset_bottom = 599.0
 mouse_filter = 0
-horizontal_scroll_mode = 3
+horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerSaga"]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 2
+theme_override_constants/separation = 20
 
 [node name="BoxButton" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
@@ -52,48 +54,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="BoxButton8" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton9" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton10" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton11" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton12" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton13" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton14" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton15" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton16" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton17" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton18" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton19" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton20" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton21" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
-
-[node name="BoxButton22" parent="ScrollContainerSaga/VBoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
 [node name="TimerPressButton" type="Timer" parent="."]
@@ -270,49 +230,13 @@ layout_mode = 2
 layout_mode = 2
 
 [connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton" to="." method="_on_box_button_button_released"]
 [connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton2" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton2" to="." method="_on_box_button_button_released"]
 [connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton3" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton3" to="." method="_on_box_button_button_released"]
 [connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton4" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton4" to="." method="_on_box_button_button_released"]
 [connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton5" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton5" to="." method="_on_box_button_button_released"]
 [connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton6" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton6" to="." method="_on_box_button_button_released"]
 [connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton7" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton7" to="." method="_on_box_button_button_released"]
 [connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton8" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton8" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton9" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton9" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton10" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton10" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton11" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton11" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton12" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton12" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton13" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton13" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton14" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton14" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton15" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton15" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton16" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton16" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton17" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton17" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton18" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton18" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton19" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton19" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton20" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton20" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton21" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton21" to="." method="_on_box_button_button_released"]
-[connection signal="button_pressed" from="ScrollContainerSaga/VBoxContainer/BoxButton22" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_released" from="ScrollContainerSaga/VBoxContainer/BoxButton22" to="." method="_on_box_button_button_released"]
 [connection signal="timeout" from="TimerPressButton" to="." method="_on_timer_press_button_timeout"]
 [connection signal="card_pressed" from="ScrollContainerCards/CenterContainer/GridContainer/Card" to="." method="_on_card_card_pressed"]
 [connection signal="card_pressed" from="ScrollContainerCards/CenterContainer/GridContainer/Card2" to="." method="_on_card_card_pressed"]

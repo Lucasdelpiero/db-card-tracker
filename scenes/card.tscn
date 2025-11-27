@@ -14,6 +14,7 @@ expand_mode = 5
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
 focus_mode = 0
+mouse_filter = 1
 text = "Probando"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
