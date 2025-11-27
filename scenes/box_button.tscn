@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0cs2mr7fgvhp"]
+
+[ext_resource type="Script" uid="uid://bi1ngbpfcupm5" path="res://scenes/box_button.gd" id="1_267f2"]
+[ext_resource type="Texture2D" uid="uid://2r2xbs737wlt" path="res://data/icons/Caja.jpg" id="1_u2om5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1670a"]
+size = Vector2(260, 40)
+
+[node name="BoxButton" type="MarginContainer"]
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_267f2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_u2om5")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = " LEYENDA 1"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+unique_name_in_owner = true
+position = Vector2(130, 21)
+shape = SubResource("RectangleShape2D_1670a")
+passby_press = true
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]

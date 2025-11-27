@@ -1,0 +1,143 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjkldpj7pwwb3"]
+
+[ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
+[ext_resource type="PackedScene" uid="uid://d0cs2mr7fgvhp" path="res://scenes/box_button.tscn" id="2_1670a"]
+
+[node name="App" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0wu41")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 392.0
+offset_bottom = 599.0
+mouse_filter = 0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BoxButton" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton10" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton11" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton12" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton13" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton14" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton15" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton16" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton17" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton18" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton19" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton20" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton21" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="BoxButton22" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+layout_mode = 2
+
+[node name="TimerPressButton" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton2" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton2" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton3" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton3" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton4" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton4" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton5" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton5" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton6" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton6" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton7" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton7" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton8" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton8" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton9" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton9" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton10" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton10" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton11" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton11" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton12" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton12" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton13" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton13" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton14" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton14" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton15" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton15" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton16" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton16" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton17" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton17" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton18" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton18" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton19" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton19" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton20" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton20" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton21" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton21" to="." method="_on_box_button_button_released"]
+[connection signal="button_pressed" from="ScrollContainer/VBoxContainer/BoxButton22" to="." method="_on_box_button_button_pressed"]
+[connection signal="button_released" from="ScrollContainer/VBoxContainer/BoxButton22" to="." method="_on_box_button_button_released"]
+[connection signal="timeout" from="TimerPressButton" to="." method="_on_timer_press_button_timeout"]

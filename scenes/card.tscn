@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd1ouba4sffhq"]
+
+[ext_resource type="Script" uid="uid://tvo2kfq7faqa" path="res://scenes/card.gd" id="1_6u4wf"]
+[ext_resource type="Texture2D" uid="uid://dcxpytoey7a7t" path="res://data/icons/Carta 1.jpg" id="1_d81rb"]
+
+[node name="Card" type="VBoxContainer"]
+script = ExtResource("1_6u4wf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_d81rb")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+focus_mode = 0
+text = "Probando"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
