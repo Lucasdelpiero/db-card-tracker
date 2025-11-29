@@ -1,18 +1,34 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjkldpj7pwwb3"]
+[gd_scene load_steps=13 format=3 uid="uid://cjkldpj7pwwb3"]
 
 [ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
 [ext_resource type="Theme" uid="uid://dsmqjit7gfeu5" path="res://data/resources/base_theme.tres" id="1_ljqyw"]
 [ext_resource type="PackedScene" uid="uid://d0cs2mr7fgvhp" path="res://scenes/box_button.tscn" id="2_1670a"]
 [ext_resource type="PackedScene" uid="uid://buqp1pjalqmst" path="res://scenes/outer_margin_container.tscn" id="2_awiwq"]
 [ext_resource type="PackedScene" uid="uid://dd1ouba4sffhq" path="res://scenes/card.tscn" id="3_dmsei"]
+[ext_resource type="Script" uid="uid://dd335iygkw0ye" path="res://scenes/saga_selection.gd" id="3_jv7dx"]
 [ext_resource type="FontFile" uid="uid://7gvm5fi4e636" path="res://data/fonts/impact.ttf" id="3_k6d74"]
 [ext_resource type="PackedScene" uid="uid://dt7smxqeokbqg" path="res://scenes/button_base.tscn" id="4_k6d74"]
+[ext_resource type="Script" uid="uid://c6k0y5e2k3d4l" path="res://scenes/saga_cards.gd" id="7_6qkjt"]
 
 [sub_resource type="Gradient" id="Gradient_dmsei"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.981982)
+colors = PackedColorArray(0.8745098, 0.48235294, 0.2509804, 1, 1, 0.62, 0.39999998, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cl6f3"]
 gradient = SubResource("Gradient_dmsei")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qkjt"]
+bg_color = Color(0.8745098, 0.48235294, 0.2509804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="App" type="Control"]
 layout_mode = 3
@@ -28,12 +44,12 @@ theme = ExtResource("1_ljqyw")
 script = ExtResource("1_0wu41")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = -397.0
-offset_top = -182.0
-offset_right = 2105.0
-offset_bottom = 2045.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0
+offset_bottom = -1.0
 texture = SubResource("GradientTexture1D_cl6f3")
 
 [node name="SagaSelection" type="Control" parent="."]
@@ -45,6 +61,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("3_jv7dx")
 
 [node name="OuterMarginContainer" parent="SagaSelection" instance=ExtResource("2_awiwq")]
 layout_mode = 1
@@ -73,64 +90,65 @@ mouse_filter = 0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer"]
+[node name="BoxContainer" type="VBoxContainer" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/separation = 20
 
-[node name="BoxButton" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton2" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton2" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton3" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton3" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton4" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton4" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton5" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton5" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton6" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton6" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton7" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton7" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton8" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton8" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton9" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton9" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton10" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton10" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton11" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton11" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton12" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton12" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton13" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton13" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton14" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton14" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton15" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton15" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton16" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton16" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton17" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton17" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton18" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_1670a")]
+[node name="BoxButton18" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
 [node name="SagaCards" type="Control" parent="."]
@@ -143,6 +161,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("7_6qkjt")
 
 [node name="OuterMarginContainer" parent="SagaCards" instance=ExtResource("2_awiwq")]
 layout_mode = 1
@@ -152,15 +171,33 @@ offset_bottom = 0.0
 [node name="VBoxContainer" type="VBoxContainer" parent="SagaCards/OuterMarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SagaCards/OuterMarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer"]
+z_index = 1000
+z_as_relative = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_6qkjt")
+
+[node name="MarginContainer" type="MarginContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelTittleCards" type="Label" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+z_index = 1000
+z_as_relative = false
 layout_mode = 2
 text = "SAGA TAL"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+z_index = 1000
+z_as_relative = false
 layout_mode = 2
 
-[node name="ButtonBack" parent="SagaCards/OuterMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
+[node name="ButtonBack" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
 layout_mode = 2
 text = "VOLVER"
 
@@ -171,6 +208,7 @@ horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 4
@@ -321,25 +359,7 @@ layout_mode = 2
 [node name="Card48" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
 layout_mode = 2
 
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton2" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton3" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton4" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton5" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton6" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton7" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton8" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton9" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton10" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton11" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton12" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton13" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton14" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton15" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton16" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton17" to="." method="_on_box_button_button_pressed"]
-[connection signal="button_pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BoxButton18" to="." method="_on_box_button_button_pressed"]
-[connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card" to="." method="_on_card_card_pressed"]
 [connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card2" to="." method="_on_card_card_pressed"]
 [connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card3" to="." method="_on_card_card_pressed"]

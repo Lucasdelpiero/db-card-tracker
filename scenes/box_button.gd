@@ -1,7 +1,11 @@
 extends MarginContainer
+class_name Box
 
+signal saga_selected(num : int)
 
-signal button_pressed()
+@onready var texture : TextureRect = %TextureRect
+@onready var label : Label = %Label 
+var num : int = 0
 
 func _on_button_pressed() -> void:
-	button_pressed.emit()
+	saga_selected.emit(num)
