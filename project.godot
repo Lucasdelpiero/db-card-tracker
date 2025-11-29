@@ -12,13 +12,16 @@ config_version=5
 
 config/name="DB card tracker"
 run/main_scene="res://scenes/app.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=400
-window/size/viewport_height=600
+window/size/viewport_width=720
+window/size/viewport_height=1600
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [input_devices]
 

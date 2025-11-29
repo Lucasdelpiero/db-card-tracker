@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dt7smxqeokbqg"]
+
+[node name="ButtonBase" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+mouse_filter = 1
