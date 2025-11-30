@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjkldpj7pwwb3"]
+[gd_scene load_steps=12 format=3 uid="uid://cjkldpj7pwwb3"]
 
 [ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
 [ext_resource type="Theme" uid="uid://dsmqjit7gfeu5" path="res://data/resources/base_theme.tres" id="1_ljqyw"]
 [ext_resource type="PackedScene" uid="uid://d0cs2mr7fgvhp" path="res://scenes/box_button.tscn" id="2_1670a"]
 [ext_resource type="PackedScene" uid="uid://buqp1pjalqmst" path="res://scenes/outer_margin_container.tscn" id="2_awiwq"]
-[ext_resource type="PackedScene" uid="uid://dd1ouba4sffhq" path="res://scenes/card.tscn" id="3_dmsei"]
 [ext_resource type="Script" uid="uid://dd335iygkw0ye" path="res://scenes/saga_selection.gd" id="3_jv7dx"]
 [ext_resource type="FontFile" uid="uid://7gvm5fi4e636" path="res://data/fonts/impact.ttf" id="3_k6d74"]
 [ext_resource type="PackedScene" uid="uid://dt7smxqeokbqg" path="res://scenes/button_base.tscn" id="4_k6d74"]
@@ -153,7 +152,6 @@ layout_mode = 2
 
 [node name="SagaCards" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,7 +187,7 @@ unique_name_in_owner = true
 z_index = 1000
 z_as_relative = false
 layout_mode = 2
-text = "SAGA TAL"
+text = "Leyenda 6"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -215,196 +213,6 @@ theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 3
 
-[node name="Card" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card2" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card3" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card4" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card5" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card6" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card7" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card8" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card9" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card10" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card11" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card12" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card13" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card14" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card15" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card16" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card17" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card18" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card19" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card20" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card21" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card22" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card23" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card24" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card25" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card26" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card27" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card28" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card29" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card30" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card31" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card32" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card33" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card34" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card35" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card36" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card37" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card38" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card39" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card40" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card41" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card42" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card43" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card44" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card45" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card46" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card47" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
-[node name="Card48" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dmsei")]
-layout_mode = 2
-
 [connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card2" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card3" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card4" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card5" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card6" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card7" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card8" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card9" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card10" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card11" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card12" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card13" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card14" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card15" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card16" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card17" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card18" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card19" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card20" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card21" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card22" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card23" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card24" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card25" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card26" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card27" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card28" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card29" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card30" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card31" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card32" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card33" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card34" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card35" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card36" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card37" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card38" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card39" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card40" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card41" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card42" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card43" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card44" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card45" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card46" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card47" to="." method="_on_card_card_pressed"]
-[connection signal="card_pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer/Card48" to="." method="_on_card_card_pressed"]
+
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BoxButton"]
