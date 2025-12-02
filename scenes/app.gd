@@ -8,6 +8,7 @@ func _ready() -> void:
 	saga_cards.visible = false
 	saga_selection.saga_changed.connect(change_saga)
 
+
 func change_saga(num : int):
 	saga_selection.visible = false
 	saga_cards.load_data(num)

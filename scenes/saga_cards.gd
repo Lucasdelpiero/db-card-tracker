@@ -8,7 +8,8 @@ var path_global : String = ""
 @onready var tittle : Label = %LabelTittleCards
 
 @onready var saga : int = 0
-	
+
+@onready var cards_data : Array[CardData] = []
 
 var nombres : Array[String] = ["Default",
 	"Leyenda 1",
@@ -30,25 +31,16 @@ var nombres : Array[String] = ["Default",
 	"Extras"
 ]
 
-func _ready() -> void:
-	for i in range(1,17):
-		for file_name in DirAccess.get_files_at(ICONS_PATH + "/" + str(i)):
-			if (file_name.get_extension() == "import"):
-				file_name = file_name.replace('.import', '')
-	
-	if OS.has_feature("editor"):
-		# Running from an editor binary.
-		# `path` will contain the absolute path to `hello.txt` located in the project root.
-		path_global = ProjectSettings.globalize_path("res://data/icons/")
-	else:
-		# Running from an exported project.
-		# `path` will contain the absolute path to `hello.txt` next to the executable.
-		# This is *not* identical to using `ProjectSettings.globalize_path()` with a `res://` path,
-		# but is close enough in spirit.
-		path_global = OS.get_executable_path().get_base_dir().path_join("data/icons/")
+func save_data() -> void:
+	var data : Dictionary = {}
+	data = saveAsJson.load_all_data()
+	for card : Card in cards_container.get_children():
+			card.data.obtenidas[0] = true
+			data[str(card.data.numero)] = [card.data.numero, card.data.obtenidas, card.data.cantRepetidas]
+			#print(data[str(card.data.numero)])
+	saveAsJson.save_all_data(data)
 
-
-func load_data(num : int):
+func load_data(num : int) -> void:
 	for child : Card in cards_container.get_children() as Array[Card]:
 		child.queue_free()
 	saga = num
@@ -59,9 +51,15 @@ func load_data(num : int):
 		var num_string : String = file.get_slice(".jpg", 0)
 		var path = "%s%s/%s" % [ICONS_PATH, str(num), file]
 		create_card(path, int(num_string))
+	
+	# Carga datos guardados en el dispositivo
+	var data := saveAsJson.load_all_data()
 
+	for card : Card in cards_container.get_children():
+		if card.data.numero != 0 and data.has(str(card.data.numero)):
+			card.load_data(data[str(card.data.numero)])
 
-func create_card(path : String, num : int):
+func create_card(path : String, num : int) -> Card:
 	var image = load(path)
 	var new : Card = card_scene.instantiate()
 	cards_container.add_child(new)
@@ -70,4 +68,6 @@ func create_card(path : String, num : int):
 	new.num = num
 	new.texture.set_texture(image)
 	new.button.text = "Carta #" + str(num)
+	new.state_changed.connect(save_data)
 	
+	return new
