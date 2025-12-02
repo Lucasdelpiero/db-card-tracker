@@ -47,44 +47,18 @@ func _ready() -> void:
 		# but is close enough in spirit.
 		path_global = OS.get_executable_path().get_base_dir().path_join("data/icons/")
 
-func load_resource(num: int):
+
+func load_data(num : int):
 	for child : Card in cards_container.get_children() as Array[Card]:
 		child.queue_free()
 	saga = num
 	tittle.text = nombres[num]
 	
-	var dir_name : String = ICONS_PATH
 	var files = ResourceLoader.list_directory(ICONS_PATH + "/" + str(num))
 	for file in files:
 		var num_string : String = file.get_slice(".jpg", 0)
 		var path = "%s%s/%s" % [ICONS_PATH, str(num), file]
 		create_card(path, int(num_string))
-
-func load_data(num : int):
-	load_resource(num)
-	return
-	# TEST
-	
-	for child : Card in cards_container.get_children() as Array[Card]:
-		child.queue_free()
-	
-	saga = num
-	
-	tittle.text = nombres[num]
-	
-	#var dir_name : String = "%s/%d/" % [ICONS_PATH, num ]
-	var dir_name : String = "%s/%d/" % [path_global, num ]
-	var dir := DirAccess.open(dir_name)
-	if dir == null:
-		push_error("No se encuentra el directorio")
-		return
-	
-	dir.list_dir_begin()
-	for file: String in dir.get_files():
-		if !file.contains(".import"):
-			var num_string : String = file.get_slice(".jpg", 0)
-			create_card(dir.get_current_dir() + "/" + file, int(num_string))
-
 
 
 func create_card(path : String, num : int):

@@ -37,13 +37,13 @@ mouse_filter = 2
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_u2om5")
 expand_mode = 3
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 1
 text = " LEYENDA 1"
 
 [connection signal="pressed" from="ButtonBase" to="." method="_on_button_pressed"]

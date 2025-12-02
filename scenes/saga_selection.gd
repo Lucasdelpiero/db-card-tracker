@@ -53,7 +53,8 @@ func _ready() -> void:
 	for i in range(1, 17):
 		load_data(i)
 
-func load_resource(num: int):
+
+func load_data(num : int):
 	for child : Box in box_container.get_children() as Array[Box]:
 		child.queue_free()
 	saga = num
@@ -62,29 +63,6 @@ func load_resource(num: int):
 	for file in files:
 		var num_string : String = file.get_slice(".jpg", 0)
 		create_box(BOX_PATH + "/" + file, int(num_string))
-
-func load_data(num : int):
-	load_resource(num)
-	return
-	# TEST
-	
-	for child : Box in box_container.get_children() as Array[Box]:
-		child.queue_free()
-	saga = num
-	
-	#var dir_name : String = "%s" % BOX_PATH
-	var dir_name : String = "%s" % path_global
-	var dir := DirAccess.open(dir_name)
-	
-	if dir == null:
-		push_error("No se encuentra el directorio")
-		return
-	
-	dir.list_dir_begin()
-	for file: String in dir.get_files():
-		if !file.contains(".import"):
-			var num_string : String = file.get_slice(".jpg", 0)
-			create_box(dir.get_current_dir() + "/" + file, int(num_string))
 
 
 func create_box(path : String, num : int):
