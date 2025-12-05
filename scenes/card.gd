@@ -6,8 +6,9 @@ const NUM = 0
 const OBTENIDAS = 1
 const CANT = 2
 
-signal card_pressed()
+
 signal state_changed()
+signal variant_pressed(data : CardData)
 
 @onready var texture = %TextureRect
 @onready var button = %Button
@@ -25,5 +26,5 @@ func load_data(arg : Array):
 		data.cantRepetidas[i] = int(arg[CANT][i])
 
 func _on_button_pressed() -> void:
-	card_pressed.emit()
+	variant_pressed.emit(data)
 	state_changed.emit()

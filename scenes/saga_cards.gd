@@ -1,6 +1,8 @@
 extends Control
 class_name SagaCards
 
+signal sg_send_data_variante_pressed(data : CardData)
+
 const ICONS_PATH = "res://data/icons/" # "res://data/icons/1/"
 var card_scene = preload("res://scenes/card.tscn")
 var path_global : String = ""
@@ -68,6 +70,10 @@ func create_card(path : String, num : int) -> Card:
 	new.num = num
 	new.texture.set_texture(image)
 	new.button.text = "Carta #" + str(num)
-	new.state_changed.connect(save_data)
+	new.variant_pressed.connect(send_data_variant_pressed)
+	#new.state_changed.connect(save_data)
 	
 	return new
+
+func send_data_variant_pressed(data : CardData) -> void:
+	sg_send_data_variante_pressed.emit(data)

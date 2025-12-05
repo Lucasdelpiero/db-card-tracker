@@ -4,9 +4,9 @@ class_name CardData
 enum VARIANTE {
 	normal = 0,
 	glitter = 1,
-	bronce = 2,
-	dorada = 3,
-	plateada = 4,
+	dorada = 2,
+	plateada = 3,
+	bronce = 4,
 	rojo = 5,
 	verde = 6,
 	azul = 7,

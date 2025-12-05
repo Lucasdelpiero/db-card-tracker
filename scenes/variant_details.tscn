@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://b12evrhn8pufn"]
+
+[ext_resource type="Script" uid="uid://c4dtu4w2t5s63" path="res://scenes/variant_details.gd" id="1_34vwo"]
+
+[node name="VariantDetails" type="HBoxContainer"]
+script = ExtResource("1_34vwo")
+
+[node name="CheckBox" type="CheckBox" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_right = 60
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Default"
+
+[node name="ButtonMinus" type="Button" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "-"
+
+[node name="LabelAmount" type="Label" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ButtonPlus" type="Button" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "+"
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="ButtonMinus" to="." method="_on_button_minus_pressed"]
+[connection signal="pressed" from="ButtonPlus" to="." method="_on_button_plus_pressed"]

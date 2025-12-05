@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjkldpj7pwwb3"]
+[gd_scene load_steps=16 format=3 uid="uid://cjkldpj7pwwb3"]
 
 [ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
 [ext_resource type="Theme" uid="uid://dsmqjit7gfeu5" path="res://data/resources/base_theme.tres" id="1_ljqyw"]
@@ -8,6 +8,9 @@
 [ext_resource type="FontFile" uid="uid://7gvm5fi4e636" path="res://data/fonts/impact.ttf" id="3_k6d74"]
 [ext_resource type="PackedScene" uid="uid://dt7smxqeokbqg" path="res://scenes/button_base.tscn" id="4_k6d74"]
 [ext_resource type="Script" uid="uid://c6k0y5e2k3d4l" path="res://scenes/saga_cards.gd" id="7_6qkjt"]
+[ext_resource type="PackedScene" uid="uid://dd1ouba4sffhq" path="res://scenes/card.tscn" id="9_ltcdg"]
+[ext_resource type="Script" uid="uid://b67v8wlbmttuy" path="res://scenes/card_details.gd" id="9_v5dbw"]
+[ext_resource type="PackedScene" uid="uid://b12evrhn8pufn" path="res://scenes/variant_details.tscn" id="10_ltcdg"]
 
 [sub_resource type="Gradient" id="Gradient_dmsei"]
 interpolation_mode = 2
@@ -28,6 +31,9 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jv7dx"]
+bg_color = Color(0.8745098, 0.48235294, 0.2509804, 1)
 
 [node name="App" type="Control"]
 layout_mode = 3
@@ -153,6 +159,7 @@ layout_mode = 2
 
 [node name="SagaCards" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -214,6 +221,150 @@ theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 3
 
+[node name="Card" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card2" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card3" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card4" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="CardDetails" type="Control" parent="."]
+unique_name_in_owner = true
+z_index = 1200
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_v5dbw")
+
+[node name="PanelContainer" type="PanelContainer" parent="CardDetails"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jv7dx")
+
+[node name="MarginContainer" type="MarginContainer" parent="CardDetails/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardDetails/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="ButtonBack" type="Button" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Volver"
+
+[node name="LabelNumero" type="Label" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Tiene       "
+
+[node name="Label2" type="Label" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Tipo"
+
+[node name="Label3" type="Label" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Repetidas"
+
+[node name="TypeContainer" type="VBoxContainer" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Normal" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Glitter" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 1
+
+[node name="Dorada" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 2
+
+[node name="Plateada" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 3
+
+[node name="Bronce" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 4
+
+[node name="Rojo" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 5
+
+[node name="Verde" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 6
+
+[node name="Azul" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 7
+
+[node name="Celeste" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 8
+
+[node name="Turquesa" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 9
+
+[node name="Rosa" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 10
+
+[node name="Violeta" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/TypeContainer" instance=ExtResource("10_ltcdg")]
+unique_name_in_owner = true
+layout_mode = 2
+type = 11
+
+[connection signal="sg_send_data_variante_pressed" from="SagaCards" to="." method="load_card_details"]
 [connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/ButtonBack" to="CardDetails" method="_on_button_back_pressed"]
 
 [editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BoxButton"]

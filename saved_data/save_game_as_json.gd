@@ -7,7 +7,7 @@ const OBTENIDAS = 1
 const CANT = 2
 
 static func save_all_data(data : Dictionary):
-	print("SAVING THE GAME")
+	#print("SAVING THE GAME")
 	var save_file := FileAccess.open(SAVE_GAME_PATH, FileAccess.WRITE)
 	for val in data:
 		var json_string := JSON.stringify(data[str(val)])
@@ -17,7 +17,7 @@ static func load_all_data() -> Dictionary:
 	if not FileAccess.file_exists(SAVE_GAME_PATH):
 		push_error("No existe archivo de guardado")
 		return {}# Error! We don't have a save to load.
-	print("LOADING THE GAME")
+	#print("LOADING THE GAME")
 	var data : Dictionary = {}
 	var save_file = FileAccess.open(SAVE_GAME_PATH, FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():
