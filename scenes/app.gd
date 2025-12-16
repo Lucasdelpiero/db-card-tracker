@@ -40,7 +40,7 @@ func get_all_missing() -> String:
 	var has_at_least_one : bool = false
 	data = saveAsJson.load_all_data()
 	
-	for i in range(1800):
+	for i in range(1, 1800):
 		if data.has(str(i)):
 			var num : String = str(i)
 			if data[num][SAGA] != saga:
@@ -63,7 +63,7 @@ func get_all_repeated() -> String:
 	var data : Dictionary
 	data = saveAsJson.load_all_data()
 	
-	for i in range(1800):
+	for i in range(1, 1800):
 		if data.has(str(i)):
 			var num : String = str(i)
 			var tipos : Array = data[num][CANT]
