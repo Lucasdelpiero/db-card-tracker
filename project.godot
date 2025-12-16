@@ -12,7 +12,11 @@ config_version=5
 
 config/name="DB card tracker"
 run/main_scene="res://scenes/app.tscn"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.5", "Mobile")
+boot_splash/bg_color=Color(1, 0.61960787, 0.4, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]
