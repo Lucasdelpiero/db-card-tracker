@@ -37,9 +37,7 @@ func save_data() -> void:
 	var data : Dictionary = {}
 	data = saveAsJson.load_all_data()
 	for card : Card in cards_container.get_children():
-			card.data.obtenidas[0] = true
 			data[str(card.data.numero)] = [card.data.numero, card.data.obtenidas, card.data.cantRepetidas]
-			#print(data[str(card.data.numero)])
 	saveAsJson.save_all_data(data)
 
 func load_data(num : int) -> void:
