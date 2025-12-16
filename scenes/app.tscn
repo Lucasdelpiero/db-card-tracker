@@ -89,6 +89,19 @@ theme_override_font_sizes/font_size = 36
 text = "CAJAS DE EXPANSIONES"
 horizontal_alignment = 1
 
+[node name="HBoxContainer" type="HBoxContainer" parent="SagaSelection/OuterMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonCopyAllMissing" parent="SagaSelection/OuterMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Copiar faltantes"
+
+[node name="ButtonCopyAllRepeated" parent="SagaSelection/OuterMarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Copiar repetidas"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="SagaSelection/OuterMarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -159,6 +172,7 @@ layout_mode = 2
 
 [node name="SagaCards" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -274,6 +288,7 @@ theme_override_constants/margin_left = 20
 
 [node name="ButtonBack" type="Button" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "Volver"
 
 [node name="LabelNumero" type="Label" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -364,6 +379,8 @@ unique_name_in_owner = true
 layout_mode = 2
 type = 11
 
+[connection signal="pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/HBoxContainer/ButtonCopyAllMissing" to="." method="_on_button_copy_all_missing_pressed"]
+[connection signal="pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/HBoxContainer/ButtonCopyAllRepeated" to="." method="_on_button_copy_all_repeated_pressed"]
 [connection signal="sg_send_data_variante_pressed" from="SagaCards" to="." method="load_card_details"]
 [connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/ButtonBack" to="CardDetails" method="_on_button_back_pressed"]

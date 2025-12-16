@@ -4,6 +4,12 @@ extends Control
 @onready var saga_cards : SagaCards = %SagaCards
 @onready var card_details = %CardDetails
 
+const NUM = 0
+const SAGA = 1
+const TIENE = 2
+const OBTENIDAS = 3
+const CANT = 4
+
 func _ready() -> void:
 	get_tree().set_auto_accept_quit(false) # game doesnt close when pressed back
 	saga_selection.visible = true
@@ -25,6 +31,49 @@ func _notification(what: int) -> void:
 				saga_selection.visible = true
 		else:
 			get_tree().quit()
+
+func get_all_missing() -> String:
+	var missing : String = ""
+	var temp_saga : String = ""
+	var data : Dictionary
+	var saga : int = 0
+	var has_at_least_one : bool = false
+	data = saveAsJson.load_all_data()
+	
+	for i in range(1800):
+		if data.has(str(i)):
+			var num : String = str(i)
+			if data[num][SAGA] != saga:
+				if has_at_least_one:
+					missing += temp_saga
+				saga = data[num][SAGA]
+				has_at_least_one = false
+				temp_saga = ""
+			if data[num][TIENE]:
+				has_at_least_one = true
+			else:
+				temp_saga += "%d " % data[num][NUM]
+	
+	missing += temp_saga
+	return missing
+
+func get_all_repeated() -> String:
+	var repeated : String = ""
+	var temp_saga : String = ""
+	var data : Dictionary
+	data = saveAsJson.load_all_data()
+	
+	for i in range(1800):
+		if data.has(str(i)):
+			var num : String = str(i)
+			var tipos : Array = data[num][CANT]
+			for j in tipos.size():
+				if tipos[j] > 0:
+					repeated += "%d " % i
+					break
+	
+	repeated += temp_saga
+	return repeated
 
 func save_data() -> void:
 	saga_cards.save_data()
@@ -51,3 +100,12 @@ func _on_card_card_pressed() -> void:
 func _on_button_back_pressed() -> void:
 	saga_selection.visible = true
 	saga_cards.visible = false
+
+
+func _on_button_copy_all_missing_pressed() -> void:
+	print(get_all_missing())
+	DisplayServer.clipboard_set(get_all_missing())
+
+func _on_button_copy_all_repeated_pressed() -> void:
+	print(get_all_repeated())
+	DisplayServer.clipboard_set(get_all_repeated())

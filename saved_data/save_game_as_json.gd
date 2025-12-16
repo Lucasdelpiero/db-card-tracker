@@ -4,8 +4,10 @@ class_name saveAsJson
 const SAVE_GAME_PATH_RES := "res://saved_data/save.json"  #"user://save.json" 
 const SAVE_GAME_PATH_USER := "user://save.json"  #"user://save.json" 
 const NUM = 0
-const OBTENIDAS = 1
-const CANT = 2
+const SAGA = 1
+const TIENE = 2
+const OBTENIDAS = 3
+const CANT = 4
 
 static func save_all_data(data : Dictionary):
 	#print("SAVING THE GAME")
@@ -45,8 +47,6 @@ static func load_all_data() -> Dictionary:
 		var temp_obt : Array[int]= []
 		for value in json.data[CANT]:
 			temp_obt.append(int(value))
-		#data[str(int(json.data[NUM]))] = [int(json.data[NUM]), json.data[OBTENIDAS], json.data[CANT]]
-		data[str(int(json.data[NUM]))] = [int(json.data[NUM]), json.data[OBTENIDAS], temp_obt]
-		#print(data[str(int(json.data[NUM]))])
+		data[str(int(json.data[NUM]))] = [int(json.data[NUM]), int(json.data[SAGA]), json.data[TIENE], json.data[OBTENIDAS], temp_obt]
 	
 	return data

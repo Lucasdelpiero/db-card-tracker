@@ -3,8 +3,8 @@ extends VBoxContainer
 class_name Card
 
 const NUM = 0
-const OBTENIDAS = 1
-const CANT = 2
+const OBTENIDAS = 3
+const CANT = 4
 
 
 signal state_changed()
