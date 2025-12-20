@@ -13,26 +13,6 @@ var path_global : String = ""
 
 @onready var cards_data : Array[CardData] = []
 
-var nombres : Array[String] = ["Default",
-	"Leyenda 1",
-	"Leyenda 2",
-	"Leyenda 3",
-	"Cartas Ocultas",
-	"Leyenda 4",
-	"Leyenda 5",
-	"Leyenda 6",
-	"Especial Personajes",
-	"Leyenda 7",
-	"Guerreros Legendarios 1",
-	"Guerreros Legendarios 2",
-	"Super Batalla 1",
-	"Super Batalla 2",
-	"Especial GT",
-	"Batalla Final 1",
-	"Batalla Final 2",
-	"Extras"
-]
-
 func save_data() -> void:
 	var data : Dictionary = {}
 	data = saveAsJson.load_all_data()
@@ -44,7 +24,7 @@ func load_data(num : int) -> void:
 	for child : Card in cards_container.get_children() as Array[Card]:
 		child.queue_free()
 	saga = num
-	tittle.text = nombres[num]
+	tittle.text = Globals.nombres[num]
 	
 	var files = ResourceLoader.list_directory(ICONS_PATH + "/" + str(num))
 	for file in files:

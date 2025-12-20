@@ -11,27 +11,6 @@ var box_scene = preload("res://scenes/box_button.tscn")
 
 @onready var saga : int = 0
 
-var nombres : Array[String] = ["Default",
-	"Leyenda 1",
-	"Leyenda 2",
-	"Leyenda 3",
-	"Cartas Ocultas",
-	"Leyenda 4",
-	"Leyenda 5",
-	"Leyenda 6",
-	"Especial Personajes",
-	"Leyenda 7",
-	"Guerreros Legendarios 1",
-	"Guerreros Legendarios 2",
-	"Super Batalla 1",
-	"Super Batalla 2",
-	"Especial GT",
-	"Batalla Final 1",
-	"Batalla Final 2",
-	"Extras"
-]
-
-
 func _ready() -> void:
 	for file_name in DirAccess.get_files_at(BOX_PATH):
 		if (file_name.get_extension() == "import"):
@@ -75,7 +54,7 @@ func create_box(path : String, num : int):
 	new.saga_selected.connect(saga_select)
 	new.num = num
 	new.texture.set_texture(image)
-	new.label.text = nombres[num]
+	new.label.text = Globals.nombres[num]
 
 func saga_select(num : int):
 	saga_changed.emit(num)
