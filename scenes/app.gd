@@ -31,6 +31,7 @@ func get_all_missing() -> String:
 	var temp_saga : String = ""
 	var data : Dictionary
 	var saga : int = 0
+	var last_saga : int = 0
 	var has_at_least_one : bool = false
 	data = saveAsJson.load_all_data()
 	
@@ -39,40 +40,58 @@ func get_all_missing() -> String:
 			var num : String = str(i)
 			if data[num][Globals.cardP.SAGA] != saga:
 				if has_at_least_one:
-					missing += temp_saga
-				#saga = data[num][SAGA]
+					missing += Globals.nombres[last_saga] + ":\n"
+					missing += temp_saga + "\n"
 				saga = data[num][Globals.cardP.SAGA]
+				last_saga = saga
 				has_at_least_one = false
 				temp_saga = ""
-			#if data[num][TIENE]:
 			if data[num][Globals.cardP.TIENE]:
 				has_at_least_one = true
-				print(temp_saga)
 			else:
-				#temp_saga += "%d " % data[num][NUM]
 				temp_saga += "%d " % data[num][Globals.cardP.NUM]
 	
-	missing += temp_saga
+	if has_at_least_one:
+		missing += Globals.nombres[last_saga] + ":\n"
+		missing += temp_saga + "\n"
+	
+	if missing.length() > 0:
+		missing = "FALTANTES:\n" + missing
 	return missing
 
 func get_all_repeated() -> String:
 	var repeated : String = ""
 	var temp_saga : String = ""
 	var data : Dictionary
+	var has_at_least_one = false
+	var saga : int = 0
+	var last_saga : int = 0
 	data = saveAsJson.load_all_data()
 	
 	for i in range(1, 1800):
 		if data.has(str(i)):
 			var num : String = str(i)
-			#var tipos : Array = data[num][CANT]
 			var tipos : Array = data[num][Globals.cardP.CANT]
+			if data[num][Globals.cardP.SAGA] != saga:
+				if has_at_least_one:
+					repeated += Globals.nombres[last_saga] + ":\n"
+					repeated += temp_saga + "\n"
+				saga = data[num][Globals.cardP.SAGA]
+				last_saga = saga
+				has_at_least_one = false
+				temp_saga = ""
 			for j in tipos.size():
 				if tipos[j] > 0:
-					repeated += "%d " % i
+					has_at_least_one = true
+					temp_saga += "%d " % i
 					break
-	
+
 	repeated += temp_saga
+	if repeated.length() > 0:
+		repeated = "REPETIDAS:\n" + repeated
 	return repeated
+
+
 
 func save_data() -> void:
 	saga_cards.save_data()

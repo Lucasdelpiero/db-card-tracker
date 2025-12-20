@@ -58,6 +58,7 @@ texture = SubResource("GradientTexture1D_cl6f3")
 
 [node name="SagaSelection" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 2.0180001
@@ -180,7 +181,6 @@ layout_mode = 2
 
 [node name="SagaCards" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -229,9 +229,19 @@ layout_mode = 2
 layout_mode = 2
 text = "VOLVER"
 
+[node name="ButtonMissing" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
+layout_mode = 2
+text = "COPIAR FALTANTES"
+
+[node name="ButtonRep" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
+layout_mode = 2
+text = "COPIAR REPETIDAS"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+scroll_vertical = 15
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
@@ -244,6 +254,57 @@ theme_override_constants/v_separation = 4
 columns = 3
 
 [node name="Card" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card5" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card6" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card7" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card8" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card9" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card10" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card11" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card12" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card13" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card14" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card15" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card16" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card17" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card18" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card19" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card20" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
+layout_mode = 2
+
+[node name="Card21" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
 layout_mode = 2
 
 [node name="Card2" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
@@ -391,6 +452,8 @@ type = 11
 [connection signal="pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/ButtonCopyAllRepeated" to="." method="_on_button_copy_all_repeated_pressed"]
 [connection signal="sg_send_data_variante_pressed" from="SagaCards" to="." method="load_card_details"]
 [connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonMissing" to="SagaCards" method="_on_button_missing_pressed"]
+[connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonRep" to="SagaCards" method="_on_button_rep_pressed"]
 [connection signal="pressed" from="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/ButtonBack" to="CardDetails" method="_on_button_back_pressed"]
 
 [editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BoxButton"]

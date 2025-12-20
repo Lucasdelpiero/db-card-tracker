@@ -41,5 +41,5 @@ focus_mode = 0
 mouse_filter = 1
 text = "Probando"
 
-[connection signal="toggled" from="CenterContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="CenterContainer/CheckBox" to="." method="_on_check_box_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
