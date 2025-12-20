@@ -12,7 +12,7 @@ const CANT = 4
 static func save_all_data(data : Dictionary):
 	#print("SAVING THE GAME")
 	var save_game_path : String
-	if OS.has_feature("standalone"):
+	if OS.has_feature("android"):
 		save_game_path = SAVE_GAME_PATH_USER
 	else:
 		save_game_path = SAVE_GAME_PATH_RES
@@ -23,7 +23,7 @@ static func save_all_data(data : Dictionary):
 
 static func load_all_data() -> Dictionary:
 	var save_game_path : String
-	if OS.has_feature("standalone"):
+	if OS.has_feature("android"):
 		save_game_path = SAVE_GAME_PATH_USER
 	else:
 		save_game_path = SAVE_GAME_PATH_RES

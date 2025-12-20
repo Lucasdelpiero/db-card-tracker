@@ -51,6 +51,7 @@ func get_all_missing() -> String:
 				temp_saga = ""
 			if data[num][TIENE]:
 				has_at_least_one = true
+				print(temp_saga)
 			else:
 				temp_saga += "%d " % data[num][NUM]
 	
