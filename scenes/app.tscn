@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjkldpj7pwwb3"]
+[gd_scene load_steps=43 format=3 uid="uid://cjkldpj7pwwb3"]
 
 [ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
 [ext_resource type="Theme" uid="uid://dsmqjit7gfeu5" path="res://data/resources/base_theme.tres" id="1_ljqyw"]
@@ -8,8 +8,26 @@
 [ext_resource type="FontFile" uid="uid://7gvm5fi4e636" path="res://data/fonts/impact.ttf" id="3_k6d74"]
 [ext_resource type="PackedScene" uid="uid://dt7smxqeokbqg" path="res://scenes/button_base.tscn" id="4_k6d74"]
 [ext_resource type="Script" uid="uid://c6k0y5e2k3d4l" path="res://scenes/saga_cards.gd" id="7_6qkjt"]
+[ext_resource type="StyleBox" uid="uid://dwpi66nmnw55l" path="res://data/resources/box_2.tres" id="8_xup88"]
+[ext_resource type="Texture2D" uid="uid://dsxsceu85jv3r" path="res://data/box/02.jpg" id="9_rp1ji"]
 [ext_resource type="Script" uid="uid://b67v8wlbmttuy" path="res://scenes/card_details.gd" id="9_v5dbw"]
+[ext_resource type="StyleBox" uid="uid://cogwno7xp020r" path="res://data/resources/box_3.tres" id="10_465pm"]
 [ext_resource type="PackedScene" uid="uid://b12evrhn8pufn" path="res://scenes/variant_details.tscn" id="10_ltcdg"]
+[ext_resource type="Texture2D" uid="uid://btl5nxsbvwxbl" path="res://data/box/03.jpg" id="11_58s2n"]
+[ext_resource type="StyleBox" uid="uid://bf7jpbq5g5qba" path="res://data/resources/box_4.tres" id="12_eqqwu"]
+[ext_resource type="Texture2D" uid="uid://b0poa3snf5acg" path="res://data/box/04.jpg" id="13_kdd54"]
+[ext_resource type="StyleBox" uid="uid://d2dulfw3qbv4c" path="res://data/resources/box_5.tres" id="14_681kt"]
+[ext_resource type="Texture2D" uid="uid://w62jknoaxae1" path="res://data/box/05.jpg" id="15_rwihi"]
+[ext_resource type="Texture2D" uid="uid://b1dd104scmrkm" path="res://data/box/06.jpg" id="16_iayit"]
+[ext_resource type="Texture2D" uid="uid://n2y8ilbjcae2" path="res://data/box/07.jpg" id="17_el8ci"]
+[ext_resource type="Texture2D" uid="uid://22tqb5qbax8q" path="res://data/box/08.jpg" id="18_q2lwu"]
+[ext_resource type="Texture2D" uid="uid://dq5en4g3ub8y1" path="res://data/box/09.jpg" id="19_pcp7a"]
+[ext_resource type="Texture2D" uid="uid://bnk1wnylr1ye" path="res://data/box/10.jpg" id="20_avep7"]
+[ext_resource type="Texture2D" uid="uid://ct3p3dok5jrdv" path="res://data/box/11.jpg" id="21_7ip81"]
+[ext_resource type="Texture2D" uid="uid://bl0j4niaosnf4" path="res://data/box/12.jpg" id="22_e1s30"]
+[ext_resource type="Texture2D" uid="uid://ch3626oodwp8w" path="res://data/box/13.jpg" id="23_2xk60"]
+[ext_resource type="Texture2D" uid="uid://d3r5ggjh2fqhj" path="res://data/box/14.jpg" id="24_1c38i"]
+[ext_resource type="Texture2D" uid="uid://cp76buglr1b" path="res://data/box/15.jpg" id="25_ptcgr"]
 
 [sub_resource type="Gradient" id="Gradient_dmsei"]
 interpolation_mode = 2
@@ -18,6 +36,76 @@ colors = PackedColorArray(0.8745098, 0.48235294, 0.2509804, 1, 1, 0.62, 0.399999
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cl6f3"]
 gradient = SubResource("Gradient_dmsei")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el8ci"]
+bg_color = Color(0.64572495, 0.3105, 0.69, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85vgn"]
+bg_color = Color(0.10199998, 0.68, 0.30430007, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7i4c"]
+bg_color = Color(0.68, 0.68, 0.68, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8niy"]
+bg_color = Color(0.22, 0.22, 0.22, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2casy"]
+bg_color = Color(0.84, 0.84, 0.84, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpnop"]
+bg_color = Color(0.30588236, 0.47843137, 0.5764706, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jdfu"]
+bg_color = Color(0.14901961, 0.5882353, 0.35686275, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r01n"]
+bg_color = Color(0.70405334, 0.86, 0.2752, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgy3h"]
+bg_color = Color(0.8392157, 0.34901962, 0.03529412, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3vw8"]
+bg_color = Color(0.5803922, 0.34509805, 0.2509804, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qkjt"]
 bg_color = Color(0.8745098, 0.48235294, 0.2509804, 1)
@@ -57,7 +145,6 @@ texture = SubResource("GradientTexture1D_cl6f3")
 
 [node name="SagaSelection" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 2.0180001
@@ -85,6 +172,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="Label" type="Label" parent="SagaSelection/OuterMarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_k6d74")
 theme_override_font_sizes/font_size = 36
 text = "CAJAS DE EXPANSIONES"
@@ -124,62 +212,141 @@ size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/separation = 20
 
-[node name="BoxButton" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="Limitadas" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton2" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="Leyenda1" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton3" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="Leyenda2" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton4" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda2" index="0"]
+theme_override_styles/normal = ExtResource("8_xup88")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda2/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("9_rp1ji")
+
+[node name="Leyenda3" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton5" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda3" index="0"]
+theme_override_styles/normal = ExtResource("10_465pm")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda3/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("11_58s2n")
+
+[node name="Leyenda4" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton6" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda4" index="0"]
+theme_override_styles/normal = ExtResource("12_eqqwu")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda4/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("13_kdd54")
+
+[node name="Leyenda5" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton7" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda5" index="0"]
+theme_override_styles/normal = ExtResource("14_681kt")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda5/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("15_rwihi")
+
+[node name="Leyenda6" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton8" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda6" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_el8ci")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda6/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("16_iayit")
+
+[node name="Personajes" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton9" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Personajes" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_85vgn")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Personajes/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("17_el8ci")
+
+[node name="Leyenda7" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton10" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda7" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_m7i4c")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda7/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("18_q2lwu")
+
+[node name="Legendarios1" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton11" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Legendarios1" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_n8niy")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Legendarios1/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("19_pcp7a")
+
+[node name="Legendarios2" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton12" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Legendarios2" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_2casy")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Legendarios2/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("20_avep7")
+
+[node name="SuperBatalla1" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton13" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/SuperBatalla1" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_tpnop")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/SuperBatalla1/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("21_7ip81")
+
+[node name="SuperBatalla2" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton14" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/SuperBatalla2" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_6jdfu")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/SuperBatalla2/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("22_e1s30")
+
+[node name="GT" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton15" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/GT" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_4r01n")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/GT/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("23_2xk60")
+
+[node name="BatallaFinal1" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton16" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BatallaFinal1" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_jgy3h")
+
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BatallaFinal1/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("24_1c38i")
+
+[node name="BatallaFinal2" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
-[node name="BoxButton17" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BatallaFinal2" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_j3vw8")
 
-[node name="BoxButton18" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
-layout_mode = 2
+[node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BatallaFinal2/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("25_ptcgr")
 
 [node name="SagaCards" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -283,6 +450,7 @@ columns = 3
 
 [node name="CardDetails" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 z_index = 1200
 z_as_relative = false
 layout_mode = 1
@@ -423,4 +591,19 @@ type = 11
 [connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/ButtonShowRep" to="SagaCards" method="_on_button_show_rep_pressed"]
 [connection signal="pressed" from="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/ButtonBack" to="CardDetails" method="_on_button_back_pressed"]
 
-[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BoxButton"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Limitadas"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda1"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda2"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda3"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda4"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda5"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda6"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Personajes"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda7"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Legendarios1"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Legendarios2"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/SuperBatalla1"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/SuperBatalla2"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/GT"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BatallaFinal1"]
+[editable path="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BatallaFinal2"]

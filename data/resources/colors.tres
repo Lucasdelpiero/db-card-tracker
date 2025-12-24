@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Colors" load_steps=2 format=3 uid="uid://by32t0xqxtfua"]
+
+[ext_resource type="Script" uid="uid://d1ojokfx4to0t" path="res://data/resources/colors.gd" id="1_5mu1y"]
+
+[resource]
+script = ExtResource("1_5mu1y")
+limitadas = Color(0.892, 1, 0.27999997, 1)
+naranja = Color(1, 0.46666667, 0, 1)
+azul = Color(0.08235294, 0.5764706, 0.8392157, 1)
+verde = Color(0.09803922, 0.6509804, 0.39215687, 1)
+rojo = Color(0.92941177, 0.20784314, 0.15686275, 1)
+amarillo = Color(0.85882354, 0.8039216, 0.17254902, 1)
+violeta = Color(0.64705884, 0.30980393, 0.6901961, 1)
+personajes = Color(0.101960786, 0.6784314, 0.30588236, 1)
+plateado = Color(0.6784314, 0.6784314, 0.6784314, 1)
+negro = Color(0.21960784, 0.21960784, 0.21960784, 1)
+blanco = Color(0.8392157, 0.8392157, 0.8392157, 1)
+gl_1 = Color(0.30588236, 0.47843137, 0.5764706, 1)
+gl_2 = Color(0.14901961, 0.5882353, 0.35686275, 1)
+GT = Color(0.7019608, 0.85882354, 0.27450982, 1)
+sb_1 = Color(0.8392157, 0.34901962, 0.03529412, 1)
+sb_2 = Color(0.5803922, 0.34509805, 0.2509804, 1)
+metadata/_custom_type_script = "uid://d1ojokfx4to0t"

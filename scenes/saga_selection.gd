@@ -8,6 +8,7 @@ const TEST = "res://data/icons/008.jpg"
 var path_global : String = ""
 var box_scene = preload("res://scenes/box_button.tscn")
 @onready var box_container : VBoxContainer = %BoxContainer
+@onready var colors : Colors = preload("res://data/resources/colors.tres")
 
 @onready var saga : int = 0
 
@@ -30,14 +31,12 @@ func _ready() -> void:
 	for child in box_container.get_children():
 		child.queue_free()
 	
-	for i in range( 15):
-		load_data(i)
+	load_data()
 
 
-func load_data(num : int):
+func load_data():
 	for child : Box in box_container.get_children() as Array[Box]:
 		child.queue_free()
-	saga = num
 	
 	var files = ResourceLoader.list_directory(BOX_PATH)
 	for file in files:
@@ -55,6 +54,7 @@ func create_box(path : String, num : int):
 	new.num = num
 	new.texture.set_texture(image)
 	new.label.text = Globals.nombres[num]
+	new.change_color(colors.get_box_color(num))
 
 func saga_select(num : int):
 	saga_changed.emit(num)
