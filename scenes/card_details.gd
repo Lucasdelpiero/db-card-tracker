@@ -3,6 +3,8 @@ class_name CardDetails
 
 signal state_changed
 
+@onready var saga_cards : SagaCards = %SagaCards
+
 @onready var normal : HBoxContainer = %Normal
 @onready var glitter : HBoxContainer = %Glitter
 @onready var dorada : HBoxContainer = %Dorada
@@ -30,7 +32,11 @@ func _ready() -> void:
 		child.plus_pressed.connect(increase_rep)
 		child.minus_pressed.connect(decrease_rep)
 		child.check_pressed.connect(toggled)
+		child.state_changed.connect(update_saga_cards_amount)
 		
+
+func update_saga_cards_amount() -> void:
+	saga_cards.update_amount_cards()
 
 func toggled(type : int, toggled_on : bool) -> void:
 	if data_to_modify != null:

@@ -283,7 +283,6 @@ columns = 3
 
 [node name="CardDetails" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 z_index = 1200
 z_as_relative = false
 layout_mode = 1

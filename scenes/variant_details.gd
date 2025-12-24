@@ -1,6 +1,7 @@
 extends HBoxContainer
 class_name VariantDetails
 
+signal state_changed()
 @export var type : int = 0
 
 enum VARIANTE {
@@ -30,12 +31,15 @@ signal check_pressed(type : int, toggled_on: bool)
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	check_pressed.emit(type, toggled_on)
+	state_changed.emit()
 
 func _on_button_minus_pressed() -> void:
 	minus_pressed.emit(type)
+	state_changed.emit()
 
 func _on_button_plus_pressed() -> void:
 	plus_pressed.emit(type)
+	state_changed.emit()
 
 func load_data(obtenida: bool, repetidas: int) -> void:
 	label.text = str(VARIANTE.find_key(type)).capitalize()
