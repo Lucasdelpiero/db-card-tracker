@@ -5,6 +5,8 @@ extends Node
 const DUP_PADDING = 5000
 const UNIQUE_PADDING = 6000
 
+const CANT_VAR = 12 # Cantidad de variantes distintas
+
 enum cardP {
 	NUM = 0,
 	SAGA = 1,

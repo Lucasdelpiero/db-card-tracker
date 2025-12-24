@@ -11,6 +11,10 @@ var path_global : String = ""
 @onready var tittle : Label = %LabelTittleCards
 @onready var scroll_container : ScrollContainer = %ScrollContainer
 
+@onready var button_show_all : Button = %ButtonShowAll
+@onready var button_show_miss : Button = %ButtonShowMiss
+@onready var button_show_rep : Button = %ButtonShowRep
+
 @onready var saga : int = 0
 
 @onready var cards_data : Array[CardData] = []
@@ -94,6 +98,7 @@ func load_data(num : int) -> void:
 			new_card.button.text = "Carta #F" + str(j - Globals.DUP_PADDING)
 			if new_card.data.numero != 0 and data.has(str(new_card.data.numero)):
 				new_card.load_data(data[str(new_card.data.numero)])
+	update_amount_cards()
 
 func create_card(path : String, num : int) -> Card:
 	var image = load(path)
@@ -106,6 +111,7 @@ func create_card(path : String, num : int) -> Card:
 	new.button.text = "Carta #" + str(num)
 	new.variant_pressed.connect(send_data_variant_pressed)
 	new.state_changed.connect(save_data) # NOTE it was commented
+	new.state_changed.connect(update_amount_cards)
 	
 	return new
 
@@ -121,3 +127,46 @@ func _on_button_missing_pressed() -> void:
 func _on_button_rep_pressed() -> void:
 	print(get_saga_repeated(saga))
 	DisplayServer.clipboard_set(get_saga_repeated(saga))
+
+
+func _on_button_show_all_pressed() -> void:
+	var cards : Array = cards_container.get_children()
+	for card in cards as Array[Card]:
+		card.visible = true
+
+
+func _on_button_show_miss_pressed() -> void:
+	var cards : Array = cards_container.get_children()
+	for card in cards as Array[Card]:
+		card.visible = !card.data.tiene
+
+
+func _on_button_show_rep_pressed() -> void:
+	var cards : Array = cards_container.get_children()
+	var rep : bool = false
+	for card in cards as Array[Card]:
+		rep = false
+		for i in range(Globals.CANT_VAR):
+			if card.data.cantRepetidas[i] > 0:
+				rep = true
+				break
+		card.visible = rep
+
+func update_amount_cards() -> void:
+	var cards : Array = cards_container.get_children()
+	var total : int = 0
+	var missing : int = 0
+	var rep : int = 0
+	var has_rep : bool
+	for card in cards as Array[Card]:
+		total += 1
+		missing += int(!card.data.tiene)
+		has_rep = false
+		for i in range(Globals.CANT_VAR):
+			if card.data.cantRepetidas[i] > 0:
+				has_rep = true
+				break
+		rep += int(has_rep)
+	button_show_all.text = "Todas(%d)" % total
+	button_show_miss.text = "Faltantes(%d)" % missing
+	button_show_rep.text = "Repetidas(%d)" % rep

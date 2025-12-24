@@ -41,6 +41,8 @@ func toggled(type : int, toggled_on : bool) -> void:
 func increase_rep(type : int) -> void:
 	if data_to_modify != null:
 		data_to_modify.cantRepetidas[type] += 1
+		if data_to_modify.cantRepetidas[type] > 0:
+			data_to_modify.obtenidas[type] = true
 		load_data(data_to_modify)
 		state_changed.emit()
 	
