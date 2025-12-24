@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjkldpj7pwwb3"]
+[gd_scene load_steps=15 format=3 uid="uid://cjkldpj7pwwb3"]
 
 [ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
 [ext_resource type="Theme" uid="uid://dsmqjit7gfeu5" path="res://data/resources/base_theme.tres" id="1_ljqyw"]
@@ -8,7 +8,6 @@
 [ext_resource type="FontFile" uid="uid://7gvm5fi4e636" path="res://data/fonts/impact.ttf" id="3_k6d74"]
 [ext_resource type="PackedScene" uid="uid://dt7smxqeokbqg" path="res://scenes/button_base.tscn" id="4_k6d74"]
 [ext_resource type="Script" uid="uid://c6k0y5e2k3d4l" path="res://scenes/saga_cards.gd" id="7_6qkjt"]
-[ext_resource type="PackedScene" uid="uid://dd1ouba4sffhq" path="res://scenes/card.tscn" id="9_ltcdg"]
 [ext_resource type="Script" uid="uid://b67v8wlbmttuy" path="res://scenes/card_details.gd" id="9_v5dbw"]
 [ext_resource type="PackedScene" uid="uid://b12evrhn8pufn" path="res://scenes/variant_details.tscn" id="10_ltcdg"]
 
@@ -49,16 +48,15 @@ script = ExtResource("1_0wu41")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.5
-anchor_bottom = 2.078
-offset_right = 360.0
-offset_bottom = -1724.8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("GradientTexture1D_cl6f3")
 
 [node name="SagaSelection" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 2.0180001
@@ -181,6 +179,7 @@ layout_mode = 2
 
 [node name="SagaCards" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -252,69 +251,6 @@ size_flags_horizontal = 3
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 3
-
-[node name="Card" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card5" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card6" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card7" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card8" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card9" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card10" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card11" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card12" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card13" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card14" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card15" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card16" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card17" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card18" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card19" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card20" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card21" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card2" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card3" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
-
-[node name="Card4" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("9_ltcdg")]
-layout_mode = 2
 
 [node name="CardDetails" type="Control" parent="."]
 unique_name_in_owner = true

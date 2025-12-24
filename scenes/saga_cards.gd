@@ -4,6 +4,7 @@ class_name SagaCards
 signal sg_send_data_variante_pressed(data : CardData)
 
 const ICONS_PATH = "res://data/icons/" # "res://data/icons/1/"
+const ICONS_PATH_DUP = "res://data/icons/dup/"
 var card_scene = preload("res://scenes/card.tscn")
 var path_global : String = ""
 @onready var cards_container : GridContainer = %GridContainer
@@ -70,7 +71,11 @@ func load_data(num : int) -> void:
 	
 	for i in nums:
 		var path = "%s%s/%03d.jpg" % [ICONS_PATH, str(saga), i]
-		create_card(path, i)
+		if saga > 0:
+			create_card(path, i)
+		else:
+			create_card(path, i + Globals.UNIQUE_PADDING)
+	
 	
 	# Carga datos guardados en el dispositivo
 	var data := saveAsJson.load_all_data()
@@ -78,6 +83,17 @@ func load_data(num : int) -> void:
 	for card : Card in cards_container.get_children():
 		if card.data.numero != 0 and data.has(str(card.data.numero)):
 			card.load_data(data[str(card.data.numero)])
+			if saga == 0:
+				card.button.text = "Leyenda %d" % (card.data.numero - Globals.UNIQUE_PADDING)
+	
+	# Carga duplicados de la saga 4
+	if saga == 4:
+		for j in range(504 + Globals.DUP_PADDING, 513 + Globals.DUP_PADDING):
+			var path = "%s/%03d.jpg" % [ICONS_PATH_DUP, j - Globals.DUP_PADDING]
+			var new_card : Card = create_card(path, j)
+			new_card.button.text = "Carta #F" + str(j - Globals.DUP_PADDING)
+			if new_card.data.numero != 0 and data.has(str(new_card.data.numero)):
+				new_card.load_data(data[str(new_card.data.numero)])
 
 func create_card(path : String, num : int) -> Card:
 	var image = load(path)

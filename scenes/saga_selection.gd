@@ -30,7 +30,7 @@ func _ready() -> void:
 	for child in box_container.get_children():
 		child.queue_free()
 	
-	for i in range(1, 17):
+	for i in range( 15):
 		load_data(i)
 
 

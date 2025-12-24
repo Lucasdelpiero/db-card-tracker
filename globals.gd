@@ -1,5 +1,10 @@
 extends Node
 
+# Padding para cartas duplicadas o unicas que se suma al valor de su num
+# Para que no se pise con las cartas normales
+const DUP_PADDING = 5000
+const UNIQUE_PADDING = 6000
+
 enum cardP {
 	NUM = 0,
 	SAGA = 1,
@@ -8,11 +13,10 @@ enum cardP {
 	CANT = 4
 }
 
-var nombres : Array[String] = ["Default",
+var nombres : Array[String] = ["Edicion Limitada",
 	"Leyenda 1",
 	"Leyenda 2",
 	"Leyenda 3",
-	"Cartas Ocultas",
 	"Leyenda 4",
 	"Leyenda 5",
 	"Leyenda 6",
