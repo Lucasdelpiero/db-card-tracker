@@ -1,7 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd1ouba4sffhq"]
+[gd_scene load_steps=7 format=3 uid="uid://dd1ouba4sffhq"]
 
 [ext_resource type="Script" uid="uid://tvo2kfq7faqa" path="res://scenes/card.gd" id="1_6u4wf"]
 [ext_resource type="Texture2D" uid="uid://dcxpytoey7a7t" path="res://data/icons/Carta 1.jpg" id="1_d81rb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u4wf"]
+bg_color = Color(0.63256174, 0.62337685, 0.12815034, 1)
+border_width_left = 9
+corner_detail = 10
+
+[sub_resource type="DPITexture" id="DPITexture_ktuci"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"2.333\"/><path fill=\"#1a1a1a\" d=\"m11.5 3.75-5.6 5.6-1.7-1.7-1.5 1.5 3.2 3.2 7.1-7.1z\"/></svg>
+"
+base_scale = 4.0
+
+[sub_resource type="DPITexture" id="DPITexture_kg30u"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" fill-opacity=\".5\" rx=\"2.333\"/></svg>
+"
+base_scale = 4.0
+
+[sub_resource type="DPITexture" id="DPITexture_sy11y"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"5.5\" fill=\"#1a1a1a\" stroke=\"#fff\" stroke-opacity=\".75\" stroke-width=\"3\"/></svg>
+"
+base_scale = 4.0
 
 [node name="Card" type="VBoxContainer"]
 custom_minimum_size = Vector2(165, 250)
@@ -32,6 +52,10 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u4wf")
+theme_override_icons/checked = SubResource("DPITexture_ktuci")
+theme_override_icons/unchecked = SubResource("DPITexture_kg30u")
+theme_override_icons/radio_checked = SubResource("DPITexture_sy11y")
 flat = true
 
 [node name="Button" type="Button" parent="."]
