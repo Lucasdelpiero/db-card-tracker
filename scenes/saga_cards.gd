@@ -88,14 +88,14 @@ func load_data(num : int) -> void:
 		if card.data.numero != 0 and data.has(str(card.data.numero)):
 			card.load_data(data[str(card.data.numero)])
 			if saga == 0:
-				card.button.text = "Leyenda %d" % (card.data.numero - Globals.UNIQUE_PADDING)
+				card.label.text = "Leyenda %d" % (card.data.numero - Globals.UNIQUE_PADDING)
 	
 	# Carga duplicados de la saga 4
 	if saga == 4:
 		for j in range(504 + Globals.DUP_PADDING, 513 + Globals.DUP_PADDING):
 			var path = "%s/%03d.jpg" % [ICONS_PATH_DUP, j - Globals.DUP_PADDING]
 			var new_card : Card = create_card(path, j)
-			new_card.button.text = "Carta #F" + str(j - Globals.DUP_PADDING)
+			new_card.label.text = "Carta F#" + str(j - Globals.DUP_PADDING)
 			if new_card.data.numero != 0 and data.has(str(new_card.data.numero)):
 				new_card.load_data(data[str(new_card.data.numero)])
 	update_amount_cards()
@@ -109,7 +109,8 @@ func create_card(path : String, num : int) -> Card:
 	new.num = num
 	new.texture.set_texture(image)
 	new.label.text = "Carta #" + str(num)
-	#new.button.text = "Carta #" + str(num)
+	if num >= 6000:
+		new.label.text = "Leyenda " + str(num - Globals.UNIQUE_PADDING)
 	new.variant_pressed.connect(send_data_variant_pressed)
 	new.state_changed.connect(save_data) # NOTE it was commented
 	new.state_changed.connect(update_amount_cards)

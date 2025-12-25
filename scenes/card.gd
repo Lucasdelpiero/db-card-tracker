@@ -1,5 +1,4 @@
-@tool
-extends VBoxContainer
+extends PanelContainer
 class_name Card
 
 signal state_changed()

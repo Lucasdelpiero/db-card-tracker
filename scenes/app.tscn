@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cjkldpj7pwwb3"]
+[gd_scene load_steps=48 format=3 uid="uid://cjkldpj7pwwb3"]
 
 [ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
 [ext_resource type="Theme" uid="uid://dsmqjit7gfeu5" path="res://data/resources/base_theme.tres" id="1_ljqyw"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ct3p3dok5jrdv" path="res://data/box/11.jpg" id="21_7ip81"]
 [ext_resource type="Texture2D" uid="uid://bl0j4niaosnf4" path="res://data/box/12.jpg" id="22_e1s30"]
 [ext_resource type="Texture2D" uid="uid://ch3626oodwp8w" path="res://data/box/13.jpg" id="23_2xk60"]
+[ext_resource type="PackedScene" uid="uid://dd1ouba4sffhq" path="res://scenes/card.tscn" id="23_rwihi"]
 [ext_resource type="Texture2D" uid="uid://d3r5ggjh2fqhj" path="res://data/box/14.jpg" id="24_1c38i"]
 [ext_resource type="StyleBox" uid="uid://c35kecpgivpbk" path="res://data/resources/button_base.tres" id="24_681kt"]
 [ext_resource type="Texture2D" uid="uid://cp76buglr1b" path="res://data/box/15.jpg" id="25_ptcgr"]
@@ -138,6 +139,12 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="Gradient" id="Gradient_rwihi"]
+colors = PackedColorArray(0.21176471, 0.5058824, 0.68235296, 1, 0.21176471, 0.5058824, 0.68235296, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iayit"]
+gradient = SubResource("Gradient_rwihi")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qkjt"]
 bg_color = Color(0.8745098, 0.48235294, 0.2509804, 1)
@@ -382,7 +389,6 @@ texture = ExtResource("25_ptcgr")
 
 [node name="SagaCards" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -391,6 +397,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("7_6qkjt")
+
+[node name="TextureRect" type="TextureRect" parent="SagaCards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_iayit")
 
 [node name="OuterMarginContainer" parent="SagaCards" instance=ExtResource("2_awiwq")]
 layout_mode = 1
@@ -441,9 +456,6 @@ horizontal_alignment = 1
 [node name="MarginContainer" type="MarginContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 theme_override_constants/margin_right = 100
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 z_index = 1000
@@ -496,12 +508,46 @@ vertical_scroll_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 4
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
 columns = 3
+
+[node name="PanelContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer3" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer4" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer5" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer6" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer7" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer8" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer9" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer10" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
+
+[node name="PanelContainer11" parent="SagaCards/OuterMarginContainer/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("23_rwihi")]
+layout_mode = 2
 
 [node name="CardDetails" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 z_index = 1200
 z_as_relative = false
 layout_mode = 1
