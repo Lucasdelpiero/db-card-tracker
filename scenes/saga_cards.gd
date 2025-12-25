@@ -153,6 +153,9 @@ func _on_button_show_rep_pressed() -> void:
 		card.visible = rep
 
 func update_amount_cards() -> void:
+	# Timer permite que se borren las cartas anteriores antes de contarlas cuando
+	# se añaden las nuevas
+	await get_tree().create_timer(0.01).timeout
 	var cards : Array = cards_container.get_children()
 	var total : int = 0
 	var missing : int = 0

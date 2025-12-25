@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cjkldpj7pwwb3"]
+[gd_scene load_steps=44 format=3 uid="uid://cjkldpj7pwwb3"]
 
 [ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
 [ext_resource type="Theme" uid="uid://dsmqjit7gfeu5" path="res://data/resources/base_theme.tres" id="1_ljqyw"]
@@ -8,15 +8,11 @@
 [ext_resource type="FontFile" uid="uid://7gvm5fi4e636" path="res://data/fonts/impact.ttf" id="3_k6d74"]
 [ext_resource type="PackedScene" uid="uid://dt7smxqeokbqg" path="res://scenes/button_base.tscn" id="4_k6d74"]
 [ext_resource type="Script" uid="uid://c6k0y5e2k3d4l" path="res://scenes/saga_cards.gd" id="7_6qkjt"]
-[ext_resource type="StyleBox" uid="uid://dwpi66nmnw55l" path="res://data/resources/box_2.tres" id="8_xup88"]
 [ext_resource type="Texture2D" uid="uid://dsxsceu85jv3r" path="res://data/box/02.jpg" id="9_rp1ji"]
 [ext_resource type="Script" uid="uid://b67v8wlbmttuy" path="res://scenes/card_details.gd" id="9_v5dbw"]
-[ext_resource type="StyleBox" uid="uid://cogwno7xp020r" path="res://data/resources/box_3.tres" id="10_465pm"]
 [ext_resource type="PackedScene" uid="uid://b12evrhn8pufn" path="res://scenes/variant_details.tscn" id="10_ltcdg"]
 [ext_resource type="Texture2D" uid="uid://btl5nxsbvwxbl" path="res://data/box/03.jpg" id="11_58s2n"]
-[ext_resource type="StyleBox" uid="uid://bf7jpbq5g5qba" path="res://data/resources/box_4.tres" id="12_eqqwu"]
 [ext_resource type="Texture2D" uid="uid://b0poa3snf5acg" path="res://data/box/04.jpg" id="13_kdd54"]
-[ext_resource type="StyleBox" uid="uid://d2dulfw3qbv4c" path="res://data/resources/box_5.tres" id="14_681kt"]
 [ext_resource type="Texture2D" uid="uid://w62jknoaxae1" path="res://data/box/05.jpg" id="15_rwihi"]
 [ext_resource type="Texture2D" uid="uid://b1dd104scmrkm" path="res://data/box/06.jpg" id="16_iayit"]
 [ext_resource type="Texture2D" uid="uid://n2y8ilbjcae2" path="res://data/box/07.jpg" id="17_el8ci"]
@@ -36,6 +32,41 @@ colors = PackedColorArray(0.8745098, 0.48235294, 0.2509804, 1, 1, 0.62, 0.399999
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cl6f3"]
 gradient = SubResource("Gradient_dmsei")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdd54"]
+bg_color = Color(1, 0.4666667, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_681kt"]
+bg_color = Color(0.084000014, 0.57540005, 0.84, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwihi"]
+bg_color = Color(0.09749998, 0.65, 0.3921666, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iayit"]
+bg_color = Color(0.93, 0.20956, 0.15810002, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2lwu"]
+bg_color = Color(0.86, 0.8026666, 0.17199999, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el8ci"]
 bg_color = Color(0.64572495, 0.3105, 0.69, 1)
@@ -218,11 +249,14 @@ layout_mode = 2
 [node name="Leyenda1" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
+[node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda1" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_kdd54")
+
 [node name="Leyenda2" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer" instance=ExtResource("2_1670a")]
 layout_mode = 2
 
 [node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda2" index="0"]
-theme_override_styles/normal = ExtResource("8_xup88")
+theme_override_styles/normal = SubResource("StyleBoxFlat_681kt")
 
 [node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda2/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("9_rp1ji")
@@ -231,7 +265,7 @@ texture = ExtResource("9_rp1ji")
 layout_mode = 2
 
 [node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda3" index="0"]
-theme_override_styles/normal = ExtResource("10_465pm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rwihi")
 
 [node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda3/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("11_58s2n")
@@ -240,7 +274,7 @@ texture = ExtResource("11_58s2n")
 layout_mode = 2
 
 [node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda4" index="0"]
-theme_override_styles/normal = ExtResource("12_eqqwu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_iayit")
 
 [node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda4/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("13_kdd54")
@@ -249,7 +283,7 @@ texture = ExtResource("13_kdd54")
 layout_mode = 2
 
 [node name="ButtonBase" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda5" index="0"]
-theme_override_styles/normal = ExtResource("14_681kt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q2lwu")
 
 [node name="TextureRect" parent="SagaSelection/OuterMarginContainer/VBoxContainer/ScrollContainer/BoxContainer/Leyenda5/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("15_rwihi")
