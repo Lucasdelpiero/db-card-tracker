@@ -55,7 +55,7 @@ func create_box(path : String, num : int):
 	new.texture.set_texture(image)
 	new.label.text = Globals.nombres[num]
 	new.change_color(colors.get_box_color(num))
+	new.label_num.text = Globals.nums[num]
 
 func saga_select(num : int):
 	saga_changed.emit(num)
-	pass

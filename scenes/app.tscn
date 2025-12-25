@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cjkldpj7pwwb3"]
+[gd_scene load_steps=45 format=3 uid="uid://cjkldpj7pwwb3"]
 
 [ext_resource type="Script" uid="uid://cd4obhprb0v2k" path="res://scenes/app.gd" id="1_0wu41"]
 [ext_resource type="Theme" uid="uid://dsmqjit7gfeu5" path="res://data/resources/base_theme.tres" id="1_ljqyw"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bl0j4niaosnf4" path="res://data/box/12.jpg" id="22_e1s30"]
 [ext_resource type="Texture2D" uid="uid://ch3626oodwp8w" path="res://data/box/13.jpg" id="23_2xk60"]
 [ext_resource type="Texture2D" uid="uid://d3r5ggjh2fqhj" path="res://data/box/14.jpg" id="24_1c38i"]
+[ext_resource type="StyleBox" uid="uid://c35kecpgivpbk" path="res://data/resources/button_base.tres" id="24_681kt"]
 [ext_resource type="Texture2D" uid="uid://cp76buglr1b" path="res://data/box/15.jpg" id="25_ptcgr"]
 
 [sub_resource type="Gradient" id="Gradient_dmsei"]
@@ -176,6 +177,7 @@ texture = SubResource("GradientTexture1D_cl6f3")
 
 [node name="SagaSelection" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 2.0180001
@@ -221,13 +223,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 32
-text = "Copiar faltantes"
+text = " Copiar faltantes "
 
 [node name="ButtonCopyAllRepeated" parent="SagaSelection/OuterMarginContainer/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("4_k6d74")]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 32
-text = "Copiar repetidas"
+text = " Copiar repetidas "
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SagaSelection/OuterMarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -409,6 +411,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6qkjt")
 [node name="MarginContainer" type="MarginContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
@@ -416,30 +419,44 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 theme_override_constants/separation = 7
 
-[node name="LabelTittleCards" type="Label" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonBack" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("4_k6d74")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = " VOLVER "
+
+[node name="LabelTittleCards" type="Label" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
 unique_name_in_owner = true
 z_index = 1000
 z_as_relative = false
 layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
 text = "Leyenda 6"
 horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_constants/margin_right = 100
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 z_index = 1000
 z_as_relative = false
 layout_mode = 2
 
-[node name="ButtonBack" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
-layout_mode = 2
-text = "VOLVER"
-
 [node name="ButtonMissing" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
 layout_mode = 2
-text = "COPIAR FALTANTES"
+text = " COPIAR FALTANTES "
 
 [node name="ButtonRep" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("4_k6d74")]
 layout_mode = 2
-text = "COPIAR REPETIDAS"
+text = " COPIAR REPETIDAS "
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 z_index = 1000
@@ -448,24 +465,25 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 28
 text = "Mostrar: "
 
 [node name="ButtonShowAll" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("4_k6d74")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Todas
+text = " Todas 
 "
 
 [node name="ButtonShowMiss" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("4_k6d74")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Faltantes"
+text = " Faltantes "
 
 [node name="ButtonShowRep" parent="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("4_k6d74")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Repetidas"
+text = " Repetidas "
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SagaCards/OuterMarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -484,7 +502,6 @@ columns = 3
 
 [node name="CardDetails" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 z_index = 1200
 z_as_relative = false
 layout_mode = 1
@@ -507,7 +524,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jv7dx")
 [node name="MarginContainer" type="MarginContainer" parent="CardDetails/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 0
 
@@ -524,7 +541,13 @@ theme_override_constants/margin_left = 20
 [node name="ButtonBack" type="Button" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 focus_mode = 0
-text = "Volver"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("24_681kt")
+theme_override_styles/pressed = ExtResource("24_681kt")
+theme_override_styles/hover = ExtResource("24_681kt")
+theme_override_styles/focus = ExtResource("24_681kt")
+text = " Volver "
 
 [node name="LabelNumero" type="Label" parent="CardDetails/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -617,7 +640,7 @@ type = 11
 [connection signal="pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/ButtonCopyAllMissing" to="." method="_on_button_copy_all_missing_pressed"]
 [connection signal="pressed" from="SagaSelection/OuterMarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/ButtonCopyAllRepeated" to="." method="_on_button_copy_all_repeated_pressed"]
 [connection signal="sg_send_data_variante_pressed" from="SagaCards" to="." method="load_card_details"]
-[connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonMissing" to="SagaCards" method="_on_button_missing_pressed"]
 [connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ButtonRep" to="SagaCards" method="_on_button_rep_pressed"]
 [connection signal="pressed" from="SagaCards/OuterMarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/ButtonShowAll" to="SagaCards" method="_on_button_show_all_pressed"]

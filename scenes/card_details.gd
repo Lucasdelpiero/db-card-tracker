@@ -27,12 +27,16 @@ var numero : int = 0
 var tipos : Array[VariantDetails] = []
 
 func _ready() -> void:
+	var cont : int = 0
 	for child : VariantDetails in type_container.get_children() as Array[VariantDetails]:
 		tipos.append(child)
 		child.plus_pressed.connect(increase_rep)
 		child.minus_pressed.connect(decrease_rep)
 		child.check_pressed.connect(toggled)
 		child.state_changed.connect(update_saga_cards_amount)
+		child.change_color(cont)
+		cont += 1
+	
 		
 
 func update_saga_cards_amount() -> void:
@@ -62,6 +66,10 @@ func load_data(data : CardData) -> void:
 	numero = data.numero
 	data_to_modify = data
 	label_numero.text = "Carta #%d" % data.numero
+	if data.numero >= Globals.DUP_PADDING and data.numero < Globals.UNIQUE_PADDING:
+		label_numero.text = "F#%d" % (data.numero - Globals.DUP_PADDING)
+	elif data.numero >= Globals.UNIQUE_PADDING:
+		label_numero.text = "Edicion Limitada #%d" % (data.numero - Globals.UNIQUE_PADDING)
 	for i in tipos.size():
 		tipos[i].load_data(data.obtenidas[i], data.cantRepetidas[i])
 

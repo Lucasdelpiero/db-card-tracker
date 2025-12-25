@@ -170,6 +170,6 @@ func update_amount_cards() -> void:
 				has_rep = true
 				break
 		rep += int(has_rep)
-	button_show_all.text = "Todas(%d)" % total
-	button_show_miss.text = "Faltantes(%d)" % missing
-	button_show_rep.text = "Repetidas(%d)" % rep
+	button_show_all.text = " Todas(%d) " % total
+	button_show_miss.text = " Faltantes(%d) " % missing
+	button_show_rep.text = " Repetidas(%d) " % rep

@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b12evrhn8pufn"]
+[gd_scene load_steps=4 format=3 uid="uid://b12evrhn8pufn"]
 
 [ext_resource type="Script" uid="uid://c4dtu4w2t5s63" path="res://scenes/variant_details.gd" id="1_34vwo"]
+
+[sub_resource type="DPITexture" id="DPITexture_34vwo"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"2.333\"/><path fill=\"#1a1a1a\" d=\"m11.5 3.75-5.6 5.6-1.7-1.7-1.5 1.5 3.2 3.2 7.1-7.1z\"/></svg>
+"
+base_scale = 2.5
+
+[sub_resource type="DPITexture" id="DPITexture_d1edu"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" fill-opacity=\".5\" rx=\"2.333\"/></svg>
+"
+base_scale = 2.5
 
 [node name="VariantDetails" type="HBoxContainer"]
 script = ExtResource("1_34vwo")
@@ -9,12 +19,15 @@ script = ExtResource("1_34vwo")
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
+theme_override_icons/checked = SubResource("DPITexture_34vwo")
+theme_override_icons/unchecked = SubResource("DPITexture_d1edu")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_right = 60
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 

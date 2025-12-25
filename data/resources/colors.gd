@@ -20,6 +20,50 @@ var default_color : Color = Color(1, 0, 1)
 @export_color_no_alpha var sb_1 : Color = Color(1, 0, 1)
 @export_color_no_alpha var sb_2 : Color = Color(1, 0, 1)
 
+@export_group("Variantes")
+@export_color_no_alpha var v_normal : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_glitter : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_dorada : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_plateada : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_bronce : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_rojo : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_verde : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_azul : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_celeste : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_turqueza : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_rosa : Color = Color(1, 0, 1)
+@export_color_no_alpha var v_violeta : Color = Color(1, 0, 1)
+
+var var_colors : Array[Color] = [
+	v_normal,
+	v_glitter,
+	v_dorada,
+	v_plateada,
+	v_bronce,
+	v_rojo,
+	v_verde,
+	v_azul,
+	v_celeste,
+	v_turqueza,
+	v_rosa,
+	v_violeta
+]
+
+var name_var_colors : Array[String] = [
+	"v_normal",
+	"v_glitter",
+	"v_dorada",
+	"v_plateada",
+	"v_bronce",
+	"v_rojo",
+	"v_verde",
+	"v_azul",
+	"v_celeste",
+	"v_turqueza",
+	"v_rosa",
+	"v_violeta"
+]
+
 var box_colors : Array[Color] = [
 	limitadas,
 	naranja,
@@ -62,3 +106,6 @@ func get_box_color(num : int) -> Color:
 	var color : Variant = get(name_box_colors[num])
 	return color
 	
+func get_var_color(num: int) -> Color:
+	var color : Variant = get(name_var_colors[num])
+	return color

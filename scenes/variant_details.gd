@@ -3,6 +3,7 @@ class_name VariantDetails
 
 signal state_changed()
 @export var type : int = 0
+@onready var colors : Colors = preload("res://data/resources/colors.tres")
 
 enum VARIANTE {
 	normal = 0,
@@ -28,6 +29,7 @@ signal check_pressed(type : int, toggled_on: bool)
 @onready var check : CheckBox = %CheckBox
 @onready var label_amount : Label = %LabelAmount
 @onready var label : Label = %Label
+@onready var color_rect : ColorRect = %ColorRect
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	check_pressed.emit(type, toggled_on)
@@ -45,3 +47,6 @@ func load_data(obtenida: bool, repetidas: int) -> void:
 	label.text = str(VARIANTE.find_key(type)).capitalize()
 	check.button_pressed = obtenida
 	label_amount.text = str(repetidas)
+
+func change_color(num : int) -> void:
+	color_rect.color = colors.get_var_color(num)

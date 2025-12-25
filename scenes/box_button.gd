@@ -5,6 +5,7 @@ signal saga_selected(num : int)
 
 @onready var texture : TextureRect = %TextureRect
 @onready var label : Label = %Label 
+@onready var label_num : Label = %LabelNum
 @onready var button : Button = %ButtonBase
 var num : int = 0
 
