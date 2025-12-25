@@ -108,7 +108,8 @@ func create_card(path : String, num : int) -> Card:
 
 	new.num = num
 	new.texture.set_texture(image)
-	new.button.text = "Carta #" + str(num)
+	new.label.text = "Carta #" + str(num)
+	#new.button.text = "Carta #" + str(num)
 	new.variant_pressed.connect(send_data_variant_pressed)
 	new.state_changed.connect(save_data) # NOTE it was commented
 	new.state_changed.connect(update_amount_cards)

@@ -6,6 +6,7 @@ signal state_changed()
 signal variant_pressed(data : CardData)
 
 @onready var texture = %TextureRect
+@onready var label = %Label
 @onready var button = %Button
 @onready var checkbox = %CheckBox
 
